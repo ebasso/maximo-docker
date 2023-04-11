@@ -29,7 +29,7 @@ RUN echo "root hard nofile 8192" >> /etc/security/limits.d/99-maximo.conf
 RUN echo "root soft fsize -1" >> /etc/security/limits.d/99-maximo.conf
 RUN echo "root hard fsize -1" >> /etc/security/limits.d/99-maximo.conf
 RUN ulimit -f unlimited
-RUN ulimit -n 8192
+#RUN ulimit -n 8192
 
 # Install IBM DB2 V10.5
 ENV DB2_IMAGE DB2_AWSE_REST_Svr_${ver}_Lnx_86-64.tar.gz
