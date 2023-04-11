@@ -104,13 +104,14 @@ Prerequisites: all binaries must be accessible via a web server during building 
 
 Procedures:
 1. Place the downloaded Maximo, IBM Db2, IBM Installation Manager and IBM WebSphere Application Server traditional binaries on a directory
+
 2. Create docker network for build with:
     ```bash
-    docker network create build
+    podman network create build
     ```
 3. Run nginx docker image to be able to download binaries from HTTP.
     ```bash
-    docker run --name images -h images --network build \
+    podman run --name images -h images --network build \
     -v [Image directory]:/usr/share/nginx/html:ro -d nginx
     ```
 4. Clone this repository.
@@ -124,7 +125,7 @@ Procedures:
 6. Build Docker images:
     Build Db2 image:
     ```bash
-    docker build -t maximo/db2:11.1.4a -t maximo/db2:latest --network build maxdb
+    podman build -t maximo/db2:4fp7 -t maximo/db2:7.6.1.3 --network build maxdb
     ```
     Build IBM Enterprise Deployment (IBM Installation Manager) image:
     ```bash

@@ -63,7 +63,7 @@ RUN mkdir /backup && chown ctginst1.ctggrp1 /backup
 
 # Install DB2 V11.1
 COPY db2awse.rsp /work
-RUN wget -q $url/$DB2_IMAGE 
+RUN wget $url/$DB2_IMAGE 
 RUN tar -xzpf $DB2_IMAGE 
 RUN  ./server_awse_o/db2setup -r ./db2awse.rsp 
 RUN  /opt/ibm/db2/V11.1/adm/db2licm -a ./server_awse_o/db2/license/db2awse_o.lic 
