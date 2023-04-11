@@ -14,7 +14,7 @@ FROM maximo/ibmim
 
 MAINTAINER Yasutaka Nishimura <nishi2go@gmail.com>
 
-ARG fp=2
+ARG fp=3
 
 ARG url=http://images
 ARG httpport=80
@@ -47,7 +47,7 @@ WORKDIR /work
 
 # Install Maximo V7.6.1 feature pack
 
-ENV MAM_FP_IMAGE MAMMTFP761${fp}IMRepo.zip
+ENV MAM_FP_IMAGE MAMMTFP761${fp}IMRepo-signed.zip
 RUN if [ "${installfp}" = "yes" ]; then wget -q $url/$MAM_FP_IMAGE && sleep 30 \
  && /opt/IBM/InstallationManager/eclipse/tools/imcl install \
  com.ibm.tivoli.tpae.base.tpae.main -repositories /work/$MAM_FP_IMAGE \
