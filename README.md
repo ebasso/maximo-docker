@@ -68,7 +68,7 @@ Procedures:
 1. Place the downloaded Maximo, IBM Db2, IBM Installation Manager and IBM WebSphere Application Server traditional binaries on a directory.
 2. Clone this repository.
     ```bash
-    git clone https://github.com/nishi2go/maximo-docker.git
+    git clone https://github.com/ebasso/maximo-docker.git
     ```
 3. Move to the directory.
     ```bash
@@ -115,7 +115,7 @@ Procedures:
     ```
 4. Clone this repository.
     ```bash
-    git clone https://github.com/nishi2go/maximo-docker.git
+    git clone https://github.com/ebasso/maximo-docker.git
     ```
 5. Move to the directory.
     ```bash
@@ -170,7 +170,7 @@ Procedures:
 1. Place the downloaded Maximo, IBM Db2, IBM Installation Manager and IBM WebSphere Application Server traditional binaries on a directory.
 2. Clone this repository.
     ```bash
-    git clone https://github.com/nishi2go/maximo-docker.git
+    git clone https://github.com/ebasso/maximo-docker.git
     ```
 3. Move to the directory.
     ```bash
