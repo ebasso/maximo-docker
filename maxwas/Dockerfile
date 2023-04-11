@@ -12,7 +12,7 @@
 
 FROM maximo/ibmim
 
-ARG url=http://images
+ARG url=http://maximo-images
 ARG fp=10
 ARG javafp=5.25
 

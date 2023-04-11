@@ -14,7 +14,7 @@ FROM ubuntu:18.04
 
 MAINTAINER Yasutaka Nishimura <nishi2go@gmail.com>
 
-ARG url=http://images
+ARG url=http://maximo-images
 ARG updateim=no
 
 ENV TEMP /tmp

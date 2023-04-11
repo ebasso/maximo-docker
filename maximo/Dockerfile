@@ -16,7 +16,7 @@ MAINTAINER Yasutaka Nishimura <nishi2go@gmail.com>
 
 ARG fp=3
 
-ARG url=http://images
+ARG url=http://maximo-images
 ARG httpport=80
 ARG installfp=yes
 ARG skin=iot18
