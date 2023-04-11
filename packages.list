@@ -4,6 +4,5 @@ MAMMTFP7613IMRepo-signed.zip,b32cdc39f6fd8f65322e4f7aec408a32
 DB2_AWSE_REST_Svr_11.1_Lnx_86-64.tar.gz,909d6764743b985d71e5f52cf362f16d
 v11.1.4fp7_linuxx64_server_t.tar.gz,a033d9e7a9a2fd62cf57a8020ebcdad3
 was.repo.9000.base.zip,a50a270d83e87b55efe4338dec8fe0ed
-sdk.repo.8030.java8.linux.zip,9feb8f48a072751a0e9ca664269cfa15
-ibm-java-sdk-8.0-5.25-linux-x64-installmgr.zip,520a20f235151da8f43c15924d676ab5
-9.0.0-WS-WAS-FP010.zip,07b7b02e54de90a95055f5fc396b974c
+sdk.repo.8035.java8.linux.zip,8f8a12c79f44f05e7a3ed03d52873933
+ibm-java-sdk-8.0-7.15-x86_64-archive.bin,b1cf7e755156a45f781450d88a884ed6
