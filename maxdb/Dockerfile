@@ -19,16 +19,17 @@ ARG ver=11.1
 ARG fp=4fp7
 
 ## Install required software
-RUN dpkg --add-architecture i386
-RUN apt update -y && apt install -y wget unzip bsdtar netcat file libx32stdc++6 libpam0g:i386 binutils libaio1 libnuma1 \
-    && rm -rf /var/lib/apt/lists/*
+RUN dpkg --add-architecture i386 \
+  && apt update -y \ 
+  && apt install -y wget unzip bsdtar netcat file libx32stdc++6 libpam0g:i386 binutils libaio1 libnuma1 \
+  && rm -rf /var/lib/apt/lists/*
 
 ## Set kernel params
-RUN echo "root soft nofile 8192" >> /etc/security/limits.d/99-maximo.conf
-RUN echo "root hard nofile 8192" >> /etc/security/limits.d/99-maximo.conf
-RUN echo "root soft fsize -1" >> /etc/security/limits.d/99-maximo.conf
-RUN echo "root hard fsize -1" >> /etc/security/limits.d/99-maximo.conf
-RUN ulimit -f unlimited
+RUN echo "root soft nofile 8192" >> /etc/security/limits.d/99-maximo.conf \
+  && echo "root hard nofile 8192" >> /etc/security/limits.d/99-maximo.conf \
+  && echo "root soft fsize -1" >> /etc/security/limits.d/99-maximo.conf \
+  && echo "root hard fsize -1" >> /etc/security/limits.d/99-maximo.conf \
+  && ulimit -f unlimited
 #RUN ulimit -n 8192
 
 # Install IBM DB2 V10.5
@@ -46,15 +47,15 @@ ENV CTGINST1_PASSWORD ctginst1
 ENV CTGFENC1_PASSWORD ctginst1
 ENV DB_MAXIMO_PASSWORD maximo
 
-RUN groupadd ctggrp1
-RUN groupadd ctgfgrp1
-RUN groupadd maximo
-RUN useradd -g ctggrp1 -m -d /home/ctginst1 ctginst1
-RUN echo "ctginst1:$CTGINST1_PASSWORD" | chpasswd
-RUN useradd -g ctgfgrp1 -m -d /home/ctgfenc1 ctgfenc1
-RUN echo "ctgfenc1:$CTGFENC1_PASSWORD" | chpasswd
-RUN useradd -g maximo -m -d /home/maximo maximo
-RUN echo "maximo:$DB_MAXIMO_PASSWORD" | chpasswd
+RUN groupadd ctggrp1 \
+  && groupadd ctgfgrp1 \
+  && groupadd maximo \
+  && useradd -g ctggrp1 -m -d /home/ctginst1 ctginst1 \
+  && useradd -g ctgfgrp1 -m -d /home/ctgfenc1 ctgfenc1 \
+  && useradd -g maximo -m -d /home/maximo maximo
+#&& echo "ctgfenc1:$CTGFENC1_PASSWORD" | chpasswd \
+#    && echo "ctginst1:$CTGINST1_PASSWORD" | chpasswd \
+#  && echo "maximo:$DB_MAXIMO_PASSWORD" | chpasswd
 
 VOLUME $MAXDB_DATADIR
 
