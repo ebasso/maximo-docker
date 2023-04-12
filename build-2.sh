@@ -144,14 +144,14 @@ fi
 echo "Start to build..."
 
 # Create a newwork if it does not exist
-if [[ -z `$PODMAN network ls -q --no-trunc -f "name=^${BUILD_NETWORK_NAME}$"` ]]; then
+if [[ -z `$PODMAN network ls -q --no-trunc -f "name=${BUILD_NETWORK_NAME}"` ]]; then
   echo "Podman network build does not exist. Start to make it."
   $PODMAN network create network=${BUILD_NETWORK_NAME}
   $PODMAN network ls -f "name=^${BUILD_NETWORK_NAME}$"
 fi
 
 # Remove and run a container for HTTP server
-images_exists=`$PODMAN ps -aq --no-trunc -f "name=^/${IMAGE_SERVER_NAME}$"`
+images_exists=`$PODMAN ps -aq --no-trunc -f "name=${IMAGE_SERVER_NAME}"`
 if [[ ! -z "$images_exists" ]]; then
     echo "Podman container images has been started. Remove it."
     $PODMAN rm -f "$images_exists"
