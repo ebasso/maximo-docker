@@ -125,7 +125,7 @@ Procedures:
 6. Build Docker images:
     Build Db2 image:
     ```bash
-    podman build -t maximo/db2:4fp7 -t maximo/db2:7.6.1.3 --network build maxdb
+    podman build -t maximo/db2:11.1 -t maximo/db2:7.6.1.3 --network build maxdb
     ```
     Build IBM Enterprise Deployment (IBM Installation Manager) image:
     ```bash

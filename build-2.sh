@@ -22,7 +22,7 @@ DB2_VER="${DB2_VER:-11.1.4a}"
 
 DOCKER="${DOCKER_CMD:-docker}"
 
-BUILD_NETWORK_NAME="build"
+BUILD_NETWORK_NAME="maximo-build"
 IMAGE_SERVER_NAME="maximo-images"
 IMAGE_SERVER_HOST_NAME="maximo-images"
 NAME_SPACE="maximo"
