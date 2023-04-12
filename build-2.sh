@@ -146,7 +146,8 @@ echo "Start to build..."
 # Create a newwork if it does not exist
 if [[ -z `$DOCKER network ls -q --no-trunc -f "name=^${BUILD_NETWORK_NAME}$"` ]]; then
   echo "Docker network build does not exist. Start to make it."
-  DOCKER_BUILDKIT=0 $DOCKER network create ${BUILD_NETWORK_NAME}
+  #$DOCKER network create ${BUILD_NETWORK_NAME}
+  $DOCKER buildx create --driver-opt network=${BUILD_NETWORK_NAME}
   $DOCKER network ls -f "name=^${BUILD_NETWORK_NAME}$"
 fi
 
