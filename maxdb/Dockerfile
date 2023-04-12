@@ -13,7 +13,7 @@ FROM ubuntu:18.04
 
 MAINTAINER Yasutaka Nishimura nishi2go@gmail.com
 
-ARG url=http://maximo-images.build
+ARG url=http://maximo-images
 
 ARG ver=11.1
 ARG fp=4fp7
