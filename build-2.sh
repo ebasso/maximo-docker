@@ -22,7 +22,7 @@ DB2_VER="${DB2_VER:-11.1.4a}"
 
 PODMAN="${PODMAN_CMD:-podman}"
 
-BUILD_NETWORK_NAME="builder"
+BUILD_NETWORK_NAME="podman1"
 #IMAGE_SERVER_NAME="maximo-images"
 #IMAGE_SERVER_HOST_NAME="maximo-images"
 IMAGE_SERVER_NAME="10.240.64.7"
