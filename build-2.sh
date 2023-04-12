@@ -22,7 +22,7 @@ DB2_VER="${DB2_VER:-11.1.4a}"
 
 PODMAN="${PODMAN_CMD:-podman}"
 
-BUILD_NETWORK_NAME="maxnet"
+BUILD_NETWORK_NAME="build"
 IMAGE_SERVER_NAME="maximo-images"
 IMAGE_SERVER_HOST_NAME="maximo-images"
 NAME_SPACE="maximo"
@@ -146,7 +146,7 @@ echo "Start to build..."
 # Create a newwork if it does not exist
 if [[ -z `$PODMAN network ls -q --no-trunc -f "name=^${BUILD_NETWORK_NAME}$"` ]]; then
   echo "Podman network build does not exist. Start to make it."
-  $PODMAN network create --driver-opt network=${BUILD_NETWORK_NAME}
+  $PODMAN network create network=${BUILD_NETWORK_NAME}
   $PODMAN network ls -f "name=^${BUILD_NETWORK_NAME}$"
 fi
 
