@@ -23,13 +23,13 @@ WORKDIR /tmp
 # Install required packages
 RUN apt update && apt install -y wget unzip && rm -rf /var/lib/apt/lists/*
 
-# Install IBM Installation Manager 1.8.8
-ENV IM_IMAGE IED_V1.8.8_Wins_Linux_86.zip
+# Install IBM Installation Manager 1.9.2
+ENV IM_IMAGE agent.installer.linux.gtk.x86_64_1.9.2.2.zip
 
 RUN mkdir /Install_Mgr && wget -q $url/$IM_IMAGE \
  && unzip -q -d /Install_Mgr $IM_IMAGE \
  && rm $IM_IMAGE \
- && /Install_Mgr/EnterpriseDVD/Linux_x86_64/EnterpriseCD-Linux-x86_64/InstallationManager/installc -log /tmp/IM_Install_Unix.xml -acceptLicense \
+ && /Install_Mgr/installc -log /tmp/IM_Install_Unix.xml -acceptLicense \
  && rm -rf /Install_Mgr
 
 ## Update Installation Manager
