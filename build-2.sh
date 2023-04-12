@@ -147,7 +147,7 @@ echo "Start to build..."
 if [[ -z `$PODMAN network ls -q --no-trunc -f "name=${BUILD_NETWORK_NAME}"` ]]; then
   echo "Podman network build does not exist. Start to make it."
   $PODMAN network create network=${BUILD_NETWORK_NAME}
-  $PODMAN network ls -f "name=^${BUILD_NETWORK_NAME}$"
+  $PODMAN network ls -f "name=${BUILD_NETWORK_NAME}"
 fi
 
 # Remove and run a container for HTTP server
@@ -160,7 +160,7 @@ fi
 echo "Start a container - images"
 $PODMAN run --rm --name ${IMAGE_SERVER_NAME} -h ${IMAGE_SERVER_HOST_NAME} --network ${BUILD_NETWORK_NAME} \
  -v "$IMAGE_DIR":/usr/share/nginx/html:ro -d nginx
-$PODMAN ps -f "name=^/${IMAGE_SERVER_NAME}"
+$PODMAN ps -f "name=${IMAGE_SERVER_NAME}"
 
 echo "Build IBM Db2 Advanced Workgroup Edition image"
 build "db2" "$DB2_VER" "maxdb" "IBM Db2 Advanced Workgroup Server Edition"
