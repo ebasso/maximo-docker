@@ -148,7 +148,7 @@ echo "Start to build..."
 # Create a newwork if it does not exist
 if [[ -z `$PODMAN network ls -q --no-trunc -f "name=${BUILD_NETWORK_NAME}"` ]]; then
   echo "Podman network build does not exist. Start to make it."
-  $PODMAN network create network=${BUILD_NETWORK_NAME}
+  $PODMAN network create ${BUILD_NETWORK_NAME}
   $PODMAN network ls -f "name=${BUILD_NETWORK_NAME}"
 fi
 
