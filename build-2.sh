@@ -23,8 +23,10 @@ DB2_VER="${DB2_VER:-11.1.4a}"
 PODMAN="${PODMAN_CMD:-podman}"
 
 BUILD_NETWORK_NAME="build"
-IMAGE_SERVER_NAME="maximo-images"
-IMAGE_SERVER_HOST_NAME="maximo-images"
+#IMAGE_SERVER_NAME="maximo-images"
+#IMAGE_SERVER_HOST_NAME="maximo-images"
+IMAGE_SERVER_NAME="localhost"
+IMAGE_SERVER_HOST_NAME="localhost"
 NAME_SPACE="maximo"
 
 REMOVE=0
