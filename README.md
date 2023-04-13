@@ -129,27 +129,27 @@ Procedures:
     ```
     Build IBM Enterprise Deployment (IBM Installation Manager) image:
     ```bash
-    docker build -t maximo/ibmim:1.8.8 -t maximo/ibmim:latest --network build ibmim
+    podman build -t maximo/ibmim:1.9.2 -t maximo/ibmim:7.6.1.3 --network build ibmim
     ```
     Build WebSphere Application Server base image:
     ```bash
-    docker build -t maximo/maxwas:9.0.0.10 -t maximo/maxwas:latest --network build maxwas
+    podman build -t maximo/maxwas:9.0.0.10 -t maximo/maxwas:7.6.1.3 --network build maxwas
     ```
     Build WebSphere Application Server Deployment Manager image:
     ```bash
-    docker build -t maximo/maxdmgr:9.0.0.10 -t maximo/maxdmgr:latest maxdmgr
+    podman build -t maximo/maxdmgr:9.0.0.10 -t maximo/maxdmgr:7.6.1.3 maxdmgr
     ```
     Build WebSphere Application Server AppServer image:
     ```bash
-    docker build -t maximo/maxapps:9.0.0.10 -t maximo/maxapps:latest maxapps
+    podman build -t maximo/maxapps:9.0.0.10 -t maximo/maxapps:7.6.1.3 maxapps
     ```
     Build IBM HTTP Server image:
     ```bash
-    docker build -t maximo/maxweb:9.0.0.10 -t maximo/maxweb:latest --network build maxweb
+    podman build -t maximo/maxweb:9.0.0.10 -t maximo/maxweb:7.6.1.3 --network build maxweb
     ```
     Build Maximo Asset Management Installation image:
     ```bash
-    docker build -t maximo/maximo:7.6.1.2 -t maximo/maximo:latest --network build maximo
+    podman build -t maximo/maximo:7.6.1.2 -t maximo/maximo:7.6.1.3 --network build maximo
     ```
     Note: If the build has failed during Maximo Feature Pack installation, run the docker build again.
 7. Run containers by using the Docker Compose file to create and deploy new instances.
