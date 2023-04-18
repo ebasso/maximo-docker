@@ -13,7 +13,7 @@
 FROM maximo/ibmim:1.9.2
 
 ARG url=http://maximo-images
-ARG fp=10
+ARG fp=05
 ARG javafp=7.15
 
 ENV TEMP /tmp
@@ -49,14 +49,14 @@ RUN wget -q ${url}/${WASND_BASE_NAME}.zip \
 ###### IBM WebSphere Application Server Network Deployment Fixpack #######
 
 ## Install IBM WebSphere Application Server traditional Fixpack
-#ENV WASFP_BASE_NAME 9.0.0-WS-WAS-FP0${fp}
-#RUN wget -q ${url}/${WASFP_BASE_NAME}.zip \
-# && /opt/IBM/InstallationManager/eclipse/tools/imcl \
-#   -acceptLicense install com.ibm.websphere.ND.v90 \
-#   -repositories /tmp/${WASFP_BASE_NAME}.zip \
-#   -installationDirectory /opt/IBM/WebSphere/AppServer \
-#   -preferences com.ibm.cic.common.core.preferences.preserveDownloadedArtifacts=false \
-# && rm -rf ${WASFP_BASE_NAME}*
+ENV WASFP_BASE_NAME 9.0.0-WS-WAS-FP0${fp}
+RUN wget -q ${url}/${WASFP_BASE_NAME}.zip \
+ && /opt/IBM/InstallationManager/eclipse/tools/imcl \
+   -acceptLicense install com.ibm.websphere.ND.v90 \
+   -repositories /tmp/${WASFP_BASE_NAME}.zip \
+   -installationDirectory /opt/IBM/WebSphere/AppServer \
+   -preferences com.ibm.cic.common.core.preferences.preserveDownloadedArtifacts=false \
+ && rm -rf ${WASFP_BASE_NAME}*
 
 # Install IBM Java SDK Fix pack
 #ENV JAVA_SDK_NAME ibm-java-sdk-8.0-${javafp}-linux-x64-installmgr
