@@ -36,22 +36,22 @@ RUN echo "fs.file-max = 1232457" >> /etc/sysctl.d/99-maximo.conf
 # Install IBM WebSphere Application Server traditional V9
 ENV WASND_BASE_NAME was.repo.90501.nd.zip
 ENV WASND_JAVA_BASE_NAME sdk.repo.8035.java8.linux
-RUN wget -q ${url}/${WASND_BASE_NAME}.zip \
- && wget -q ${url}/${WASND_JAVA_BASE_NAME}.zip \
- && /opt/IBM/InstallationManager/eclipse/tools/imcl \
-   -acceptLicense install com.ibm.websphere.ND.v90 com.ibm.java.jdk.v8 \
-   -repositories /tmp/${WASND_BASE_NAME}.zip,/tmp/${WASND_JAVA_BASE_NAME}.zip \
-   -installationDirectory /opt/IBM/WebSphere/AppServer \
-   -preferences com.ibm.cic.common.core.preferences.preserveDownloadedArtifacts=false \
- && rm -rf ${WASND_BASE_NAME}* \
- && rm -rf ${WASND_JAVA_BASE_NAME}*
 #RUN wget -q ${url}/${WASND_BASE_NAME}.zip \
+# && wget -q ${url}/${WASND_JAVA_BASE_NAME}.zip \
 # && /opt/IBM/InstallationManager/eclipse/tools/imcl \
-#   -acceptLicense install com.ibm.websphere.ND.v90 \
-#   -repositories /tmp/${WASND_BASE_NAME}.zip \
+#   -acceptLicense install com.ibm.websphere.ND.v90 com.ibm.java.jdk.v8 \
+#   -repositories /tmp/${WASND_BASE_NAME}.zip,/tmp/${WASND_JAVA_BASE_NAME}.zip \
 #   -installationDirectory /opt/IBM/WebSphere/AppServer \
 #   -preferences com.ibm.cic.common.core.preferences.preserveDownloadedArtifacts=false \
-# && rm -rf ${WASND_BASE_NAME}* 
+# && rm -rf ${WASND_BASE_NAME}* \
+# && rm -rf ${WASND_JAVA_BASE_NAME}*
+RUN wget -q ${url}/${WASND_BASE_NAME}.zip \
+ && /opt/IBM/InstallationManager/eclipse/tools/imcl \
+   -acceptLicense install com.ibm.websphere.ND.v90 \
+   -repositories /tmp/${WASND_BASE_NAME}.zip \
+   -installationDirectory /opt/IBM/WebSphere/AppServer \
+   -preferences com.ibm.cic.common.core.preferences.preserveDownloadedArtifacts=false \
+ && rm -rf ${WASND_BASE_NAME}* 
 
 ###### IBM WebSphere Application Server Network Deployment Fixpack #######
 
