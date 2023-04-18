@@ -30,7 +30,7 @@ RUN echo "root hard nofile 8192" >> /etc/security/limits.d/99-maximo.conf
 RUN echo "root soft fsize -1" >> /etc/security/limits.d/99-maximo.conf
 RUN echo "root hard fsize -1" >> /etc/security/limits.d/99-maximo.conf
 RUN ulimit -f unlimited
-RUN ulimit -n 8192
+#RUN ulimit -n 8192
 RUN echo "fs.file-max = 1232457" >> /etc/sysctl.d/99-maximo.conf
 
 # Install IBM WebSphere Application Server traditional V9
