@@ -34,7 +34,7 @@ WORKDIR /Launchpad
 ENV BYPASS_PRS=True
 
 ## Install Maximo V7.6.1
-ENV MAM_IMAGE MAM_7.6.1_LINUX64.tar.gz
+ENV MAM_IMAGE MAM_7.6.1.0_LINUX64.tar.gz
 ## Remove z from tar command because file is not gzipped despite having gz extension
 RUN wget -q $url/$MAM_IMAGE && tar xpf $MAM_IMAGE \
  && /opt/IBM/InstallationManager/eclipse/tools/imcl \
