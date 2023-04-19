@@ -10,7 +10,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM maximo/ibmim
+FROM maximo/ibmim:1.9.2
 
 MAINTAINER Yasutaka Nishimura <nishi2go@gmail.com>
 

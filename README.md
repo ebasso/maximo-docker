@@ -149,7 +149,7 @@ Procedures:
     ```
     Build Maximo Asset Management Installation image:
     ```bash
-    podman build -t maximo/maximo:7.6.1.2 -t maximo/maximo:7.6.1.3 --network build maximo
+    podman build -t maximo/maximo:7.6.1.3 --network build maximo
     ```
     Note: If the build has failed during Maximo Feature Pack installation, run the docker build again.
 7. Run containers by using the Docker Compose file to create and deploy new instances.
