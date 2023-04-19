@@ -17,7 +17,7 @@ CHECK_DIR=$1
 PACKAGE_LIST=packages.list
 MAXIMO_VER="${MAXIMO_VER:-7.6.1.3}"
 IM_VER="${IM_VER:-1.9.2}"
-WAS_VER="${WAS_VER:-9.0.0.10}"
+WAS_VER="${WAS_VER:-9.0.5.1}"
 DB2_VER="${DB2_VER:-11.1}"
 
 PODMAN="${PODMAN_CMD:-podman}"

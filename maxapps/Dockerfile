@@ -9,7 +9,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-FROM maximo/maxwas
+FROM maximo/maxwas:9.0.5.1
 
 MAINTAINER Yasutaka Nishimura nishi2go@gmail.com
 

@@ -133,19 +133,19 @@ Procedures:
     ```
     Build WebSphere Application Server base image:
     ```bash
-    podman build -t maximo/maxwas:9.0.0.10 -t maximo/maxwas:7.6.1.3 --network build maxwas
+    podman build -t maximo/maxwas:9.0.5.1 -t maximo/maxwas:7.6.1.3 --network build maxwas
     ```
     Build WebSphere Application Server Deployment Manager image:
     ```bash
-    podman build -t maximo/maxdmgr:9.0.0.10 -t maximo/maxdmgr:7.6.1.3 maxdmgr
+    podman build -t maximo/maxdmgr:9.0.5.1 -t maximo/maxdmgr:7.6.1.3 maxdmgr
     ```
     Build WebSphere Application Server AppServer image:
     ```bash
-    podman build -t maximo/maxapps:9.0.0.10 -t maximo/maxapps:7.6.1.3 maxapps
+    podman build -t maximo/maxapps:9.0.5.1 -t maximo/maxapps:7.6.1.3 maxapps
     ```
     Build IBM HTTP Server image:
     ```bash
-    podman build -t maximo/maxweb:9.0.0.10 -t maximo/maxweb:7.6.1.3 --network build maxweb
+    podman build -t maximo/maxweb:9.0.5.1 -t maximo/maxweb:7.6.1.3 --network build maxweb
     ```
     Build Maximo Asset Management Installation image:
     ```bash
